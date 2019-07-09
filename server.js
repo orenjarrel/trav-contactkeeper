@@ -11,6 +11,11 @@ app.get('/', (req, res) =>
 );
 
 
+// Init Middleware
+// this is needed since we are trying to access the json 'body' data
+// n the users.js file. (ex. req.send(req.body))
+app.use(express.json({ extended: false }));
+
 // Define Routes
 // whenever these URL are called, it will look inside the designated file (users.js, auth.js, contacts.js)
 app.use('/api/users', require('./routes/users'));
