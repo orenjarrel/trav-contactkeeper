@@ -42,7 +42,7 @@ router.post('/', [
 
     if(user) {
       return res.status(400)
-        .json({ msg: 'User already exists '});
+        .json({ msg: 'User already exists'});
     }
 
     // create an instance of the User model
